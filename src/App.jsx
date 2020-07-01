@@ -5,6 +5,7 @@ import AppScreen1 from './components/AppScreen1'
 import AppScreen2 from './components/AppScreen2'
 import AppScreen3 from './components/AppScreen3';
 import AppScreen4 from './components/AppScreen4';
+import AppScreen5 from './components/AppScreen5';
 
 const App = () => {
 
@@ -12,6 +13,7 @@ const App = () => {
   const [showAppScreen2, setShowAppScreen2] = useState(false)
   const [showAppScreen3, setShowAppScreen3] = useState(false)
   const [showAppScreen4, setShowAppScreen4] = useState(false)
+  const [showAppScreen5, setShowAppScreen5] = useState(false)
 
   const toggleAppScreen2 = () => {
     setShowAppScreen1(!showAppScreen1)
@@ -26,6 +28,11 @@ const App = () => {
   const toggleAppScreen4 = () => {
     setShowAppScreen3(!showAppScreen3)
     setShowAppScreen4(!showAppScreen4)
+  }
+
+  const toggleAppScreen5 = () => {
+    setShowAppScreen4(!showAppScreen4)
+    setShowAppScreen5(!showAppScreen5)
   }
 
   return (
@@ -48,7 +55,10 @@ const App = () => {
           />
         }
         {showAppScreen4 &&
-          <AppScreen4 />
+          <AppScreen4 onShowAppScreen5={toggleAppScreen5} />
+        }
+        {showAppScreen5 &&
+          <AppScreen5 />
         }
       </Container>
     </>
