@@ -17,7 +17,7 @@ const AppScreen2 = (props) => {
           fullWidth
           variant="contained"
           color="primary"
-          onClick={props.onHideAppScreen2}
+          onClick={props.onShowAppScreen3}
         >
           Continuar
         </Button>
