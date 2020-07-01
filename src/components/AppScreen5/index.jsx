@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Paper, Typography } from '@material-ui/core'
+import { Box, Typography } from '@material-ui/core'
 
 const AppScreen5 = () => {
   return (
