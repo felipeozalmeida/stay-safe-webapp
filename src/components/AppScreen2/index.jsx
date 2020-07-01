@@ -11,7 +11,7 @@ const AppScreen2 = (props) => {
       <Box mb={2}>
         <TextField fullWidth variant="outlined" size="small" label="Seu email ou telefone" />
       </Box>
-      <Box mb={2}>
+      <Box mb={1}>
         <Button
           disableElevation
           fullWidth
@@ -22,11 +22,15 @@ const AppScreen2 = (props) => {
           Continuar
         </Button>
       </Box>
-      <Typography align="center">
-        <Link onClick={props.onHideAppScreen2}>
+      <Box mb={1}>
+        <Button
+          fullWidth
+          color="primary"
+          onClick={props.onHideAppScreen2}
+        >
           Voltar
-        </Link>
-      </Typography>
+        </Button>
+      </Box>
     </>
   )
 }

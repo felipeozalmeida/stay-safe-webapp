@@ -10,9 +10,11 @@ const AppScreen3 = (props) => {
       </Box>
       <Box textAlign="center">
         <Typography paragraph>
-          Enviamos o link de acesso para o seu email ou telefone fornecido. Clique sobre ele para efetuar seu login.
+          Enviamos o link de acesso para o seu email ou telefone fornecido.
+          Clique sobre ele para efetuar seu login (para fins de demonstração,
+          finalize seu login clicando no botão abaixo).
         </Typography>
-        <Box mb={2}>
+        <Box mb={1}>
           <Button
             disableElevation
             fullWidth
@@ -23,9 +25,15 @@ const AppScreen3 = (props) => {
             Continuar
           </Button>
         </Box>
-        <Link onClick={props.onHideAppScreen3}>
-          Voltar
-        </Link>
+        <Box mb={1}>
+          <Button
+            fullWidth
+            color="primary"
+            onClick={props.onHideAppScreen3}
+          >
+            Voltar
+          </Button>
+        </Box>
       </Box>
     </>
   )
