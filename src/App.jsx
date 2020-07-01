@@ -10,24 +10,24 @@ function App() {
     <>
       <CssBaseline />
       <Container fixed maxWidth="xs">
-          <Box display="flex" alignItems="start" justifyContent="center" my={2}>
-            <img src={logo} alt="Logo do Stay Safe Webapp." />
-          </Box>
-          <Box mb={1}>
-            <Button fullWidth variant="contained" color="primary">
-              Google
-            </Button>
-          </Box>
-          <Box mb={1}>
-            <Button fullWidth variant="contained" color="primary">
-              Facebook
-            </Button>
-          </Box>
-          <Box mb={1}>
-            <Button fullWidth variant="contained" color="primary">
-              Entrar com email/telefone
-            </Button>
-          </Box>
+        <Box display="flex" alignItems="start" justifyContent="center" my={2}>
+          <img src={logo} alt="Logo do Stay Safe Webapp." />
+        </Box>
+        <Box mb={1}>
+          <Button disableElevation fullWidth variant="contained" color="primary">
+            Continuar com Google
+          </Button>
+        </Box>
+        <Box mb={1}>
+          <Button disableElevation fullWidth variant="contained" color="primary">
+            Continuar com Facebook
+          </Button>
+        </Box>
+        <Box mb={1}>
+          <Button disabled disableElevation fullWidth variant="contained" color="primary">
+            Entrar com email / telefone
+          </Button>
+        </Box>
       </Container>
     </>
   );
