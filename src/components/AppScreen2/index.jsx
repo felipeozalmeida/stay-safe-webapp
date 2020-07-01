@@ -1,0 +1,34 @@
+import React from 'react'
+import { Box, Button, Link, TextField, Typography } from '@material-ui/core'
+import logo from '../../images/logo.png'
+
+const AppScreen2 = (props) => {
+  return (
+    <>
+      <Box display="flex" alignItems="start" justifyContent="center" my={2}>
+        <img src={logo} alt="Logo do Stay Safe Webapp." />
+      </Box>
+      <Box mb={2}>
+        <TextField fullWidth variant="outlined" size="small" label="Seu email ou telefone" />
+      </Box>
+      <Box mb={2}>
+        <Button
+          disableElevation
+          fullWidth
+          variant="contained"
+          color="primary"
+          onClick={props.onHideAppScreen2}
+        >
+          Continuar
+        </Button>
+      </Box>
+      <Typography align="center">
+        <Link onClick={props.onHideAppScreen2}>
+          Voltar
+        </Link>
+      </Typography>
+    </>
+  )
+}
+
+export default AppScreen2

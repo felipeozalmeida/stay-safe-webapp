@@ -1,33 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
-import Container from '@material-ui/core/Container';
-import logo from './images/logo.png';
+import { Container } from '@material-ui/core'
+import AppScreen1 from './components/AppScreen1'
+import AppScreen2 from './components/AppScreen2'
 
-function App() {
+const App = () => {
+
+  const [showAppScreen1, setShowAppScreen1] = useState(true)
+  const [showAppScreen2, setShowAppScreen2] = useState(false)
+
+  const handleShowAppScreen2 = () => {
+    setShowAppScreen1(false)
+    setShowAppScreen2(true)
+  }
+
+  const handleHideAppScreen2 = () => {
+    setShowAppScreen1(true)
+    setShowAppScreen2(false)
+  }
+
   return (
     <>
       <CssBaseline />
       <Container fixed maxWidth="xs">
-        <Box display="flex" alignItems="start" justifyContent="center" my={2}>
-          <img src={logo} alt="Logo do Stay Safe Webapp." />
-        </Box>
-        <Box mb={1}>
-          <Button disableElevation fullWidth variant="contained" color="primary">
-            Continuar com Google
-          </Button>
-        </Box>
-        <Box mb={1}>
-          <Button disableElevation fullWidth variant="contained" color="primary">
-            Continuar com Facebook
-          </Button>
-        </Box>
-        <Box mb={1}>
-          <Button disabled disableElevation fullWidth variant="contained" color="primary">
-            Entrar com email / telefone
-          </Button>
-        </Box>
+        {showAppScreen1 &&
+          <AppScreen1 onShowAppScreen2={handleShowAppScreen2} />
+        }
+        {showAppScreen2 &&
+          <AppScreen2 onHideAppScreen2={handleHideAppScreen2} />
+        }
       </Container>
     </>
   );
