@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Link, Typography } from '@material-ui/core'
+import { Box, Button, Link, Typography } from '@material-ui/core'
 import logo from '../../images/logo.png'
 
 const AppScreen3 = (props) => {
@@ -12,6 +12,17 @@ const AppScreen3 = (props) => {
         <Typography paragraph>
           Enviamos o link de acesso para o seu email ou telefone fornecido. Clique sobre ele para efetuar seu login.
         </Typography>
+        <Box mb={2}>
+          <Button
+            disableElevation
+            fullWidth
+            variant="contained"
+            color="primary"
+            onClick={props.onShowAppScreen4}
+          >
+            Continuar
+          </Button>
+        </Box>
         <Link onClick={props.onHideAppScreen3}>
           Voltar
         </Link>

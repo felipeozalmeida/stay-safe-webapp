@@ -4,12 +4,14 @@ import { Container } from '@material-ui/core'
 import AppScreen1 from './components/AppScreen1'
 import AppScreen2 from './components/AppScreen2'
 import AppScreen3 from './components/AppScreen3';
+import AppScreen4 from './components/AppScreen4';
 
 const App = () => {
 
   const [showAppScreen1, setShowAppScreen1] = useState(true)
   const [showAppScreen2, setShowAppScreen2] = useState(false)
   const [showAppScreen3, setShowAppScreen3] = useState(false)
+  const [showAppScreen4, setShowAppScreen4] = useState(false)
 
   const toggleAppScreen2 = () => {
     setShowAppScreen1(!showAppScreen1)
@@ -19,6 +21,11 @@ const App = () => {
   const toggleAppScreen3 = () => {
     setShowAppScreen2(!showAppScreen2)
     setShowAppScreen3(!showAppScreen3)
+  }
+
+  const toggleAppScreen4 = () => {
+    setShowAppScreen3(!showAppScreen3)
+    setShowAppScreen4(!showAppScreen4)
   }
 
   return (
@@ -37,7 +44,11 @@ const App = () => {
         {showAppScreen3 &&
           <AppScreen3
             onHideAppScreen3={toggleAppScreen3}
+            onShowAppScreen4={toggleAppScreen4}
           />
+        }
+        {showAppScreen4 &&
+          <AppScreen4 />
         }
       </Container>
     </>
