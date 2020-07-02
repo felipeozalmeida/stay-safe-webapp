@@ -47,10 +47,9 @@ const AppScreen5 = (props) => {
           label="Aceito os termos de uso"
         />
       </Box>
-      <Box mb={2}>
+      <Box display="flex" alignItems="flex-start" justifyContent="center" mb={2}>
         <Button
           disableElevation
-          fullWidth
           variant="contained"
           color="primary"
           onClick={props.onShowAppScreen6}
