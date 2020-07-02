@@ -24,7 +24,6 @@ const App = () => {
       [`showAppScreen${back}`]: !state[`showAppScreen${back}`],
       [`showAppScreen${next}`]: !state[`showAppScreen${next}`]
     })
-    console.log(state)
   }
 
   return (
