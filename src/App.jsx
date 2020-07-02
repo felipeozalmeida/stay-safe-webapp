@@ -9,57 +9,50 @@ import AppScreen5 from './components/AppScreen5';
 
 const App = () => {
 
-  const [showAppScreen1, setShowAppScreen1] = useState(true)
-  const [showAppScreen2, setShowAppScreen2] = useState(false)
-  const [showAppScreen3, setShowAppScreen3] = useState(false)
-  const [showAppScreen4, setShowAppScreen4] = useState(false)
-  const [showAppScreen5, setShowAppScreen5] = useState(false)
+  const [state, setState] = useState({
+    showAppScreen1: true,
+    showAppScreen2: false,
+    showAppScreen3: false,
+    showAppScreen4: false,
+    showAppScreen5: false,
+    showAppScreen6: false,
+  })
 
-  const toggleAppScreen2 = () => {
-    setShowAppScreen1(!showAppScreen1)
-    setShowAppScreen2(!showAppScreen2)
-  }
-
-  const toggleAppScreen3 = () => {
-    setShowAppScreen2(!showAppScreen2)
-    setShowAppScreen3(!showAppScreen3)
-  }
-
-  const toggleAppScreen4 = () => {
-    setShowAppScreen3(!showAppScreen3)
-    setShowAppScreen4(!showAppScreen4)
-  }
-
-  const toggleAppScreen5 = () => {
-    setShowAppScreen4(!showAppScreen4)
-    setShowAppScreen5(!showAppScreen5)
+  const toggleAppScreen = (back, next) => {
+    setState({
+      ...state,
+      [`showAppScreen${back}`]: !state[`showAppScreen${back}`],
+      [`showAppScreen${next}`]: !state[`showAppScreen${next}`]
+    })
+    console.log(state)
   }
 
   return (
     <>
       <CssBaseline />
       <Container fixed maxWidth="xs">
-        {showAppScreen1 &&
-          <AppScreen1 onShowAppScreen2={toggleAppScreen2} />
+        {state.showAppScreen1 &&
+          <AppScreen1 onShowAppScreen2={() => toggleAppScreen(1, 2)} />
         }
-        {showAppScreen2 &&
+        {state.showAppScreen2 &&
           <AppScreen2
-            onHideAppScreen2={toggleAppScreen2}
-            onShowAppScreen3={toggleAppScreen3}
+            onHideAppScreen2={() => toggleAppScreen(2, 1)}
+            onShowAppScreen3={() => toggleAppScreen(2, 3)}
           />
         }
-        {showAppScreen3 &&
+        {state.showAppScreen3 &&
           <AppScreen3
-            onHideAppScreen3={toggleAppScreen3}
-            onShowAppScreen4={toggleAppScreen4}
+            onHideAppScreen3={() => toggleAppScreen(3, 2)}
+            onShowAppScreen4={() => toggleAppScreen(3, 4)}
           />
         }
-        {showAppScreen4 &&
-          <AppScreen4 onShowAppScreen5={toggleAppScreen5} />
+        {state.showAppScreen4 &&
+          <AppScreen4 onShowAppScreen5={() => toggleAppScreen(4, 5)} />
         }
-        {showAppScreen5 &&
+        {state.showAppScreen5 &&
           <AppScreen5 />
         }
+
       </Container>
     </>
   );

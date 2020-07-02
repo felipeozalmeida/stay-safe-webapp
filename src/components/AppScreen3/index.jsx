@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Link, Typography } from '@material-ui/core'
+import { Box, Button, Typography } from '@material-ui/core'
 import logo from '../../images/logo.png'
 
 const AppScreen3 = (props) => {

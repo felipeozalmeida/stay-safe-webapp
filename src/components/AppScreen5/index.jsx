@@ -1,7 +1,17 @@
-import React from 'react'
-import { Box, Typography } from '@material-ui/core'
+import React, { useState } from 'react'
+import {
+  Box, Button, Checkbox, FormControlLabel, Typography
+} from '@material-ui/core'
 
-const AppScreen5 = () => {
+const AppScreen5 = (props) => {
+  const [state, setState] = useState({
+    checked: false
+  })
+
+  const handleChange = (event) => {
+    setState({ ...state, checked: event.target.checked })
+  }
+
   return (
     <>
       <Box my={2}>
@@ -13,7 +23,7 @@ const AppScreen5 = () => {
           Regras
         </Typography>
       </Box>
-      <Box border={1} p={1}>
+      <Box border={1} p={1} m={1}>
         <Typography>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum id
           sem id semper ac sed risus. Tortor amet, pretium morbi eget. Elit
@@ -24,6 +34,29 @@ const AppScreen5 = () => {
           Lectus sagittis ante ut mauris quis faucibus luctus pharetra.
           Adipiscing cursus sit.
         </Typography>
+      </Box>
+      <Box display="flex" alignItems="flex-start" justifyContent="center" mb={1}>
+        <FormControlLabel
+          control={
+            <Checkbox
+              color="primary"
+              checked={state.checked}
+              onChange={handleChange}
+            />
+          }
+          label="Aceito os termos de uso"
+        />
+      </Box>
+      <Box mb={2}>
+        <Button
+          disableElevation
+          fullWidth
+          variant="contained"
+          color="primary"
+          onClick={props.onShowAppScreen6}
+        >
+          Próximo
+        </Button>
       </Box>
     </>
   )
