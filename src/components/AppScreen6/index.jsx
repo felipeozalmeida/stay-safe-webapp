@@ -24,10 +24,12 @@ const AppScreen6 = () => {
         justifyContent="center"
         my={4}
       >
-        <Avatar
-          src="https://picsum.photos/150"
-          style={{ width: 150, height: 150 }}
-        />
+        <Button style={{ borderRadius: '50%', padding: 0 }}>
+          <Avatar
+            src=""
+            style={{ width: 150, height: 150 }}
+          />
+        </Button>
       </Box>
       <Box mb={2}>
         <TextField fullWidth label="Nome" />
