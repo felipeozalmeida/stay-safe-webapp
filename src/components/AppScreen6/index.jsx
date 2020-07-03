@@ -22,13 +22,28 @@ const useStyles = makeStyles({
     borderRadius: '50%',
     padding: 0,
     textAlign: 'center'
+  },
+  avatar: {
+    height: 150,
+    width: 150
   }
 })
 
 const AppScreen6 = () => {
   const classes = useStyles()
   const [date, setDate] = useState()
-  const [image, setImage] = useState()
+  const [imagePreview, setImagePreview] = useState()
+  const [file, setImageFile] = useState()
+
+  const handleImageChange = event => {
+    const file = event.target.files[0]
+    const reader = new FileReader()
+    reader.onloadend = () => {
+      setImagePreview(reader.result)
+      setImageFile(file)
+    }
+    reader.readAsDataURL(file)
+  }
 
   return (
     <>
@@ -39,16 +54,20 @@ const AppScreen6 = () => {
         my={4}
       >
         <input
-          accept="image/*"
-          className={classes.input}
-          id="avatar-button-file"
           type="file"
+          accept="image/*"
+          id="avatar-button-file"
+          className={classes.input}
+          onChange={handleImageChange}
         />
         <label htmlFor="avatar-button-file">
-          <Button className={classes.button} component="div">
+          <Button
+            className={classes.button}
+            component="div"
+          >
             <Avatar
-              src=""
-              style={{ width: 150, height: 150 }}
+              className={classes.avatar}
+              src={imagePreview}
             >
               Adicionar Foto
             </Avatar>
