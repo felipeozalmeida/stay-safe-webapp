@@ -17,8 +17,8 @@ const App = () => {
     showAppScreen3: false,
     showAppScreen4: false,
     showAppScreen5: false,
-    showAppScreen6: false,
-    showAppScreen7: true,
+    showAppScreen6: true,
+    showAppScreen7: false,
   })
 
   const toggleAppScreen = (back, next) => {

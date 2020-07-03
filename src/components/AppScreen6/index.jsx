@@ -33,7 +33,7 @@ const AppScreen6 = props => {
   const classes = useStyles()
   const [date, setDate] = useState()
   const [imagePreview, setImagePreview] = useState()
-  const [file, setImageFile] = useState()
+  const [, setImageFile] = useState()
 
   const handleImageChange = event => {
     const file = event.target.files[0]
