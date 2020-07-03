@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Button, Typography } from "@material-ui/core";
 
-const AppScreen7 = () => {
+const AppScreen7 = props => {
   return (
     <>
       <Box mt={4}>
@@ -22,6 +22,7 @@ const AppScreen7 = () => {
           disableElevation
           variant="contained"
           color="primary"
+          onClick={props.onShowAppScreen8}
         >
           Sim
         </Button>
