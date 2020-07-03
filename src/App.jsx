@@ -6,6 +6,7 @@ import AppScreen2 from './components/AppScreen2'
 import AppScreen3 from './components/AppScreen3';
 import AppScreen4 from './components/AppScreen4';
 import AppScreen5 from './components/AppScreen5';
+import AppScreen6 from './components/AppScreen6';
 
 const App = () => {
 
@@ -49,9 +50,11 @@ const App = () => {
           <AppScreen4 onShowAppScreen5={() => toggleAppScreen(4, 5)} />
         }
         {state.showAppScreen5 &&
-          <AppScreen5 />
+          <AppScreen5 onShowAppScreen6={() => toggleAppScreen(5, 6)} />
         }
-
+        {state.showAppScreen6 &&
+          <AppScreen6 />
+        }
       </Container>
     </>
   );
