@@ -29,7 +29,7 @@ const useStyles = makeStyles({
   }
 })
 
-const AppScreen6 = () => {
+const AppScreen6 = props => {
   const classes = useStyles()
   const [date, setDate] = useState()
   const [imagePreview, setImagePreview] = useState()
@@ -119,6 +119,7 @@ const AppScreen6 = () => {
           disableElevation
           variant="contained"
           color="primary"
+          onClick={props.onShowAppScreen7}
         >
           Confirmar
         </Button>
