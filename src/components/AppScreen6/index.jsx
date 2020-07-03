@@ -28,6 +28,7 @@ const useStyles = makeStyles({
 const AppScreen6 = () => {
   const classes = useStyles()
   const [date, setDate] = useState()
+  const [image, setImage] = useState()
 
   return (
     <>
@@ -41,7 +42,6 @@ const AppScreen6 = () => {
           accept="image/*"
           className={classes.input}
           id="avatar-button-file"
-          multiple
           type="file"
         />
         <label htmlFor="avatar-button-file">
