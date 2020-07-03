@@ -12,8 +12,21 @@ import {
 } from '@material-ui/core'
 import { DatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers'
 import DateFnsUtils from '@date-io/date-fns'
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles({
+  input: {
+    display: 'none'
+  },
+  button: {
+    borderRadius: '50%',
+    padding: 0,
+    textAlign: 'center'
+  }
+})
 
 const AppScreen6 = () => {
+  const classes = useStyles()
   const [date, setDate] = useState()
 
   return (
@@ -24,12 +37,23 @@ const AppScreen6 = () => {
         justifyContent="center"
         my={4}
       >
-        <Button style={{ borderRadius: '50%', padding: 0 }}>
-          <Avatar
-            src=""
-            style={{ width: 150, height: 150 }}
-          />
-        </Button>
+        <input
+          accept="image/*"
+          className={classes.input}
+          id="avatar-button-file"
+          multiple
+          type="file"
+        />
+        <label htmlFor="avatar-button-file">
+          <Button className={classes.button} component="div">
+            <Avatar
+              src=""
+              style={{ width: 150, height: 150 }}
+            >
+              Adicionar Foto
+            </Avatar>
+          </Button>
+        </label>
       </Box>
       <Box mb={2}>
         <TextField fullWidth label="Nome" />
