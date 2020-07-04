@@ -48,20 +48,32 @@ const AppScreen8 = props => {
           Por gentileza, informe abaixo quais dessas doenças você já possuí.
         </Typography>
       </Box>
-      <Grid container spacing={2}>
-        {availableDiseases.map((disease, index) => (
-          <Grid item xs={6} key={index}>
-            <ToggleButton
-              className={classes.toggleButton}
-              value={disease.value}
-              selected={selectedDiseases.includes(disease.value)}
-              onChange={handleSelectedDiseaseChange}
-            >
-              {disease.text}
-            </ToggleButton>
-          </Grid>
-        ))}
-      </Grid>
+      <Box mb={2}>
+        <Grid container spacing={2}>
+          {availableDiseases.map((disease, index) => (
+            <Grid item xs={6} key={index}>
+              <ToggleButton
+                className={classes.toggleButton}
+                value={disease.value}
+                selected={selectedDiseases.includes(disease.value)}
+                onChange={handleSelectedDiseaseChange}
+              >
+                {disease.text}
+              </ToggleButton>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+      <Box display="flex" alignItems="flex-start" justifyContent="center" mb={2}>
+        <Button
+          disableElevation
+          variant="contained"
+          color="primary"
+          onClick={props.onShowAppScreen9}
+        >
+          Próximo
+        </Button>
+      </Box>
     </>
   )
 }
