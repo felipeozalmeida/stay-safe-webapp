@@ -12,7 +12,7 @@ const useStyles = makeStyles({
   }
 })
 
-const AppScreen8 = () => {
+const AppScreen8 = props => {
   const classes = useStyles()
 
   const availableDiseases = [
@@ -38,6 +38,7 @@ const AppScreen8 = () => {
       <Box my={2}>
         <Button
           startIcon={<ArrowBackIcon />}
+          onClick={props.onHideAppScreen8}
         >
           Voltar
         </Button>

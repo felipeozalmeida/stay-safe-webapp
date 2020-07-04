@@ -63,7 +63,7 @@ const App = () => {
           <AppScreen7 onShowAppScreen8={() => toggleAppScreen(7, 8)} />
         }
         {state.showAppScreen8 &&
-          <AppScreen8 />
+          <AppScreen8 onHideAppScreen8={() => toggleAppScreen(8, 7)} />
         }
       </Container>
     </>
