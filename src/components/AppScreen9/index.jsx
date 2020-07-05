@@ -47,7 +47,7 @@ const AppScreen9 = props => {
           Voltar
         </Button>
       </Box>
-      <Box mb={-5}>
+      <Box mb={7}>
         {symptoms.map((symptom, index) => (
           <Box mb={5} key={index}>
             <Box mb={3}>
@@ -60,6 +60,21 @@ const AppScreen9 = props => {
             </Box>
           </Box>
         ))}
+      </Box>
+      <Box
+        display="flex"
+        alignItems="flex-start"
+        justifyContent="flex-end"
+        mb={2}
+      >
+        <Button
+          disableElevation
+          variant="contained"
+          color="primary"
+          onClick={props.onShowAppScreen10}
+        >
+          Próximo
+        </Button>
       </Box>
     </>
   )
