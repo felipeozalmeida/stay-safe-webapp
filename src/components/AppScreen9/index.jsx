@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Box, Button, Slider, Typography } from '@material-ui/core'
 import { ChevronLeft as ArrowBackIcon } from '@material-ui/icons'
@@ -32,13 +32,23 @@ const useStyles = makeStyles({
 const AppScreen9 = props => {
 
   const classes = useStyles()
-  const symptoms = [
+  const [showSymptomsA, setShowSymptomsA] = useState(true)
+  const [showSymptomsB, setShowSymptomsB] = useState(false)
+
+  const symptomsA = [
     'Sintoma A',
     'Sintoma B',
     'Sintoma C',
+  ]
+  const symptomsB = [
     'Sintoma D',
     'Sintoma E',
   ]
+
+  const showNextSymptoms = () => {
+    setShowSymptomsA(false)
+    setShowSymptomsB(true)
+  }
 
   return (
     <>
@@ -47,35 +57,73 @@ const AppScreen9 = props => {
           Voltar
         </Button>
       </Box>
-      <Box mb={7}>
-        {symptoms.map((symptom, index) => (
-          <Box mb={5} key={index}>
-            <Box mb={3}>
-              <Typography align="center" variant="h5">
-                {symptom}
-              </Typography>
-            </Box>
-            <Box mx={2}>
-              <Slider classes={classes} min={0} max={10} step={1} />
-            </Box>
+      {/* TODO: refactor the sh*t below */}
+      {showSymptomsA &&
+        <Box>
+          <Box mb={7}>
+            {symptomsA.map((symptom, index) => (
+              <Box mb={5} key={index}>
+                <Box mb={3}>
+                  <Typography align="center" variant="h5">
+                    {symptom}
+                  </Typography>
+                </Box>
+                <Box mx={2}>
+                  <Slider classes={classes} min={0} max={10} step={1} />
+                </Box>
+              </Box>
+            ))}
           </Box>
-        ))}
-      </Box>
-      <Box
-        display="flex"
-        alignItems="flex-start"
-        justifyContent="flex-end"
-        mb={2}
-      >
-        <Button
-          disableElevation
-          variant="contained"
-          color="primary"
-          onClick={props.onShowAppScreen10}
-        >
-          Próximo
-        </Button>
-      </Box>
+          <Box
+            display="flex"
+            alignItems="flex-start"
+            justifyContent="flex-end"
+            mb={2}
+          >
+            <Button
+              disableElevation
+              variant="contained"
+              color="primary"
+              onClick={showNextSymptoms}
+            >
+              Próximo
+            </Button>
+          </Box>
+        </Box>
+      }
+      {showSymptomsB &&
+        <Box>
+          <Box mb={7}>
+            {symptomsB.map((symptom, index) => (
+              <Box mb={5} key={index}>
+                <Box mb={3}>
+                  <Typography align="center" variant="h5">
+                    {symptom}
+                  </Typography>
+                </Box>
+                <Box mx={2}>
+                  <Slider classes={classes} min={0} max={10} step={1} />
+                </Box>
+              </Box>
+            ))}
+          </Box>
+          <Box
+            display="flex"
+            alignItems="flex-start"
+            justifyContent="flex-end"
+            mb={2}
+          >
+            <Button
+              disableElevation
+              variant="contained"
+              color="primary"
+              onClick={props.onShowAppScreen10}
+            >
+              Enviar
+            </Button>
+          </Box>
+        </Box>
+      }
     </>
   )
 }
