@@ -21,8 +21,8 @@ const App = () => {
     showAppScreen5: false,
     showAppScreen6: false,
     showAppScreen7: false,
-    showAppScreen8: true,
-    showAppScreen9: false
+    showAppScreen8: false,
+    showAppScreen9: true
   })
 
   const toggleAppScreen = (back, next) => {
@@ -71,7 +71,9 @@ const App = () => {
           />
         }
         {state.showAppScreen9 &&
-          <AppScreen9 />
+          <AppScreen9
+            onHideAppScreen9={() => toggleAppScreen(9, 8)}
+          />
         }
       </Container>
     </>
