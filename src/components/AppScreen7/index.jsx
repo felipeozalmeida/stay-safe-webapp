@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 import { Box, Button, Typography } from "@material-ui/core";
 
-const AppScreen7 = props => {
+const AppScreen7 = (props) => {
   return (
     <>
       <Box mt={4}>
@@ -10,12 +10,7 @@ const AppScreen7 = props => {
         </Typography>
       </Box>
       <Box display="flex" alignItems="flex-start" justifyContent="space-around">
-        <Button
-          disabled
-          disableElevation
-          variant="contained"
-          color="primary"
-        >
+        <Button disabled disableElevation variant="contained" color="primary">
           Mais tarde
         </Button>
         <Button
@@ -28,7 +23,7 @@ const AppScreen7 = props => {
         </Button>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default AppScreen7
+export default AppScreen7;

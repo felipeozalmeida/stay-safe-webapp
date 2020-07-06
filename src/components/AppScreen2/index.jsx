@@ -1,6 +1,6 @@
-import React from 'react'
-import { Box, Button, TextField } from '@material-ui/core'
-import logo from '../../images/logo.png'
+import React from "react";
+import { Box, Button, TextField } from "@material-ui/core";
+import logo from "../../images/logo.png";
 
 const AppScreen2 = (props) => {
   return (
@@ -9,7 +9,12 @@ const AppScreen2 = (props) => {
         <img src={logo} alt="Logo do Stay Safe Webapp." />
       </Box>
       <Box mb={2}>
-        <TextField fullWidth variant="outlined" size="small" label="Seu email ou telefone" />
+        <TextField
+          fullWidth
+          variant="outlined"
+          size="small"
+          label="Seu email ou telefone"
+        />
       </Box>
       <Box mb={1}>
         <Button
@@ -23,16 +28,12 @@ const AppScreen2 = (props) => {
         </Button>
       </Box>
       <Box mb={1}>
-        <Button
-          fullWidth
-          color="primary"
-          onClick={props.onHideAppScreen2}
-        >
+        <Button fullWidth color="primary" onClick={props.onHideAppScreen2}>
           Voltar
         </Button>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default AppScreen2
+export default AppScreen2;

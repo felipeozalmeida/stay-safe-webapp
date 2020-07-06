@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import {
   Box,
   Button,
@@ -8,42 +8,42 @@ import {
   Radio,
   RadioGroup,
   TextField,
-  Avatar
-} from '@material-ui/core'
-import { DatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers'
-import DateFnsUtils from '@date-io/date-fns'
-import { makeStyles } from '@material-ui/core/styles'
+  Avatar,
+} from "@material-ui/core";
+import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   input: {
-    display: 'none'
+    display: "none",
   },
   button: {
-    borderRadius: '50%',
+    borderRadius: "50%",
     padding: 0,
-    textAlign: 'center'
+    textAlign: "center",
   },
   avatar: {
     height: 150,
-    width: 150
-  }
-})
+    width: 150,
+  },
+});
 
-const AppScreen6 = props => {
-  const classes = useStyles()
-  const [date, setDate] = useState()
-  const [imagePreview, setImagePreview] = useState()
-  const [, setImageFile] = useState()
+const AppScreen6 = (props) => {
+  const classes = useStyles();
+  const [date, setDate] = useState();
+  const [imagePreview, setImagePreview] = useState();
+  const [, setImageFile] = useState();
 
-  const handleImageChange = event => {
-    const file = event.target.files[0]
-    const reader = new FileReader()
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
     reader.onloadend = () => {
-      setImagePreview(reader.result)
-      setImageFile(file)
-    }
-    reader.readAsDataURL(file)
-  }
+      setImagePreview(reader.result);
+      setImageFile(file);
+    };
+    reader.readAsDataURL(file);
+  };
 
   return (
     <>
@@ -61,14 +61,8 @@ const AppScreen6 = props => {
           onChange={handleImageChange}
         />
         <label htmlFor="avatar-button-file">
-          <Button
-            className={classes.button}
-            component="div"
-          >
-            <Avatar
-              className={classes.avatar}
-              src={imagePreview}
-            >
+          <Button className={classes.button} component="div">
+            <Avatar className={classes.avatar} src={imagePreview}>
               Adicionar Foto
             </Avatar>
           </Button>
@@ -114,7 +108,12 @@ const AppScreen6 = props => {
           </RadioGroup>
         </FormControl>
       </Box>
-      <Box display="flex" alignItems="flex-start" justifyContent="center" mb={2}>
+      <Box
+        display="flex"
+        alignItems="flex-start"
+        justifyContent="center"
+        mb={2}
+      >
         <Button
           disableElevation
           variant="contained"
@@ -125,7 +124,7 @@ const AppScreen6 = props => {
         </Button>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default AppScreen6
+export default AppScreen6;

@@ -1,6 +1,6 @@
-import React from 'react'
-import { Box, Button, Typography } from '@material-ui/core'
-import logo from '../../images/logo.png'
+import React from "react";
+import { Box, Button, Typography } from "@material-ui/core";
+import logo from "../../images/logo.png";
 
 const AppScreen4 = (props) => {
   return (
@@ -9,9 +9,7 @@ const AppScreen4 = (props) => {
         <img src={logo} alt="Logo do Stay Safe Webapp." />
       </Box>
       <Box textAlign="center">
-        <Typography paragraph>
-          Autenticando...
-        </Typography>
+        <Typography paragraph>Autenticando...</Typography>
       </Box>
       <Button
         disableElevation
@@ -23,7 +21,7 @@ const AppScreen4 = (props) => {
         Continuar
       </Button>
     </>
-  )
-}
+  );
+};
 
-export default AppScreen4
+export default AppScreen4;

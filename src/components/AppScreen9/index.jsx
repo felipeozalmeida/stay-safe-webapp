@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import { Box, Button, Slider, Typography } from '@material-ui/core'
-import { ChevronLeft as ArrowBackIcon } from '@material-ui/icons'
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import { Box, Button, Slider, Typography } from "@material-ui/core";
+import { ChevronLeft as ArrowBackIcon } from "@material-ui/icons";
 
 const useStyles = makeStyles({
   rail: {
@@ -14,41 +14,33 @@ const useStyles = makeStyles({
     `,
     borderRadius: 10,
     height: 16,
-    opacity: 1
+    opacity: 1,
   },
   thumb: {
     marginLeft: -15,
     marginTop: -7,
     height: 30,
-    width: 30
+    width: 30,
   },
   track: {
-    borderRadius: '10px 0 0 10px',
-    color: 'transparent',
-    height: 16
-  }
-})
+    borderRadius: "10px 0 0 10px",
+    color: "transparent",
+    height: 16,
+  },
+});
 
-const AppScreen9 = props => {
+const AppScreen9 = (props) => {
+  const classes = useStyles();
+  const [showSymptomsA, setShowSymptomsA] = useState(true);
+  const [showSymptomsB, setShowSymptomsB] = useState(false);
 
-  const classes = useStyles()
-  const [showSymptomsA, setShowSymptomsA] = useState(true)
-  const [showSymptomsB, setShowSymptomsB] = useState(false)
-
-  const symptomsA = [
-    'Sintoma A',
-    'Sintoma B',
-    'Sintoma C',
-  ]
-  const symptomsB = [
-    'Sintoma D',
-    'Sintoma E',
-  ]
+  const symptomsA = ["Sintoma A", "Sintoma B", "Sintoma C"];
+  const symptomsB = ["Sintoma D", "Sintoma E"];
 
   const showNextSymptoms = () => {
-    setShowSymptomsA(false)
-    setShowSymptomsB(true)
-  }
+    setShowSymptomsA(false);
+    setShowSymptomsB(true);
+  };
 
   return (
     <>
@@ -58,7 +50,7 @@ const AppScreen9 = props => {
         </Button>
       </Box>
       {/* TODO: refactor the sh*t below */}
-      {showSymptomsA &&
+      {showSymptomsA && (
         <Box>
           <Box mb={7}>
             {symptomsA.map((symptom, index) => (
@@ -90,8 +82,8 @@ const AppScreen9 = props => {
             </Button>
           </Box>
         </Box>
-      }
-      {showSymptomsB &&
+      )}
+      {showSymptomsB && (
         <Box>
           <Box mb={7}>
             {symptomsB.map((symptom, index) => (
@@ -123,9 +115,9 @@ const AppScreen9 = props => {
             </Button>
           </Box>
         </Box>
-      }
+      )}
     </>
-  )
-}
+  );
+};
 
-export default AppScreen9
+export default AppScreen9;

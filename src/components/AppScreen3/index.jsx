@@ -1,6 +1,6 @@
-import React from 'react'
-import { Box, Button, Typography } from '@material-ui/core'
-import logo from '../../images/logo.png'
+import React from "react";
+import { Box, Button, Typography } from "@material-ui/core";
+import logo from "../../images/logo.png";
 
 const AppScreen3 = (props) => {
   return (
@@ -26,17 +26,13 @@ const AppScreen3 = (props) => {
           </Button>
         </Box>
         <Box mb={1}>
-          <Button
-            fullWidth
-            color="primary"
-            onClick={props.onHideAppScreen3}
-          >
+          <Button fullWidth color="primary" onClick={props.onHideAppScreen3}>
             Voltar
           </Button>
         </Box>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default AppScreen3
+export default AppScreen3;

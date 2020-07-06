@@ -1,45 +1,42 @@
-import React, { useState } from 'react'
-import { Box, Button, Grid, Typography } from '@material-ui/core'
-import { ToggleButton } from '@material-ui/lab'
-import { ChevronLeft as ArrowBackIcon } from '@material-ui/icons'
-import { makeStyles } from '@material-ui/core/styles'
+import React, { useState } from "react";
+import { Box, Button, Grid, Typography } from "@material-ui/core";
+import { ToggleButton } from "@material-ui/lab";
+import { ChevronLeft as ArrowBackIcon } from "@material-ui/icons";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   toggleButton: {
     minHeight: 70,
-    textTransform: 'none',
-    width: '100%'
-  }
-})
+    textTransform: "none",
+    width: "100%",
+  },
+});
 
-const AppScreen8 = props => {
-  const classes = useStyles()
+const AppScreen8 = (props) => {
+  const classes = useStyles();
 
   const availableDiseases = [
-    { value: 'disease1', text: 'Diabetes' },
-    { value: 'disease2', text: 'Doença cardíaca' },
-    { value: 'disease3', text: 'Doença renal crônica' },
-    { value: 'disease4', text: 'Doença respiratória crônica' },
-    { value: 'disease5', text: 'Pressão alta' },
-  ]
+    { value: "disease1", text: "Diabetes" },
+    { value: "disease2", text: "Doença cardíaca" },
+    { value: "disease3", text: "Doença renal crônica" },
+    { value: "disease4", text: "Doença respiratória crônica" },
+    { value: "disease5", text: "Pressão alta" },
+  ];
 
-  const [selectedDiseases, setSelectedDiseases] = useState([])
+  const [selectedDiseases, setSelectedDiseases] = useState([]);
 
   const handleSelectedDiseaseChange = (event, newDisease) => {
     if (selectedDiseases.includes(newDisease)) {
-      setSelectedDiseases(selectedDiseases.filter(sd => sd !== newDisease))
+      setSelectedDiseases(selectedDiseases.filter((sd) => sd !== newDisease));
     } else {
-      setSelectedDiseases([...selectedDiseases, newDisease])
+      setSelectedDiseases([...selectedDiseases, newDisease]);
     }
-  }
+  };
 
   return (
     <>
       <Box my={2}>
-        <Button
-          startIcon={<ArrowBackIcon />}
-          onClick={props.onHideAppScreen8}
-        >
+        <Button startIcon={<ArrowBackIcon />} onClick={props.onHideAppScreen8}>
           Voltar
         </Button>
       </Box>
@@ -64,7 +61,12 @@ const AppScreen8 = props => {
           ))}
         </Grid>
       </Box>
-      <Box display="flex" alignItems="flex-start" justifyContent="center" mb={2}>
+      <Box
+        display="flex"
+        alignItems="flex-start"
+        justifyContent="center"
+        mb={2}
+      >
         <Button
           disableElevation
           variant="contained"
@@ -75,7 +77,7 @@ const AppScreen8 = props => {
         </Button>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default AppScreen8
+export default AppScreen8;

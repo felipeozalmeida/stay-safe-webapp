@@ -1,18 +1,17 @@
-import React from 'react'
-import { Box, Button, Typography } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
-import logo from '../../images/logo.png'
+import React from "react";
+import { Box, Button, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import logo from "../../images/logo.png";
 
 const useStyles = makeStyles({
   root: {
     paddingLeft: 48,
-    paddingRight: 48
-  }
-})
+    paddingRight: 48,
+  },
+});
 
-const AppScreen10 = props => {
-
-  const classes = useStyles()
+const AppScreen10 = (props) => {
+  const classes = useStyles();
 
   return (
     <>
@@ -48,7 +47,7 @@ const AppScreen10 = props => {
         </Button>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default AppScreen10
+export default AppScreen10;

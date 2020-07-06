@@ -1,6 +1,6 @@
-import React from "react"
-import { Box, Button } from '@material-ui/core'
-import logo from '../../images/logo.png'
+import React from "react";
+import { Box, Button } from "@material-ui/core";
+import logo from "../../images/logo.png";
 
 const AppScreen1 = (props) => {
   return (
@@ -42,7 +42,7 @@ const AppScreen1 = (props) => {
         </Button>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default AppScreen1
+export default AppScreen1;

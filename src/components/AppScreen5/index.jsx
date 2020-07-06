@@ -1,25 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import {
-  Box, Button, Checkbox, FormControlLabel, Typography
-} from '@material-ui/core'
+  Box,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Typography,
+} from "@material-ui/core";
 
 const AppScreen5 = (props) => {
   const [state, setState] = useState({
-    checked: false
-  })
+    checked: false,
+  });
 
   const handleChange = (event) => {
-    setState({ ...state, checked: event.target.checked })
-  }
+    setState({ ...state, checked: event.target.checked });
+  };
 
   return (
     <>
       <Box my={2}>
-        <Typography
-          align="center"
-          component="h1"
-          variant="h4"
-        >
+        <Typography align="center" component="h1" variant="h4">
           Regras
         </Typography>
       </Box>
@@ -27,15 +27,19 @@ const AppScreen5 = (props) => {
         <Typography>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum id
           sem id semper ac sed risus. Tortor amet, pretium morbi eget. Elit
-          lectus feugiat viverra nunc gravida malesuada tristique. Elit
-          accumsan cras libero sagittis, mus. Neque a nunc donec vulputate
-          ornare sed sed. Ac ut enim tempus vel fermentum libero consequat mi.
-          In etiam aenean feugiat gravida orci accumsan placerat commodo.
-          Lectus sagittis ante ut mauris quis faucibus luctus pharetra.
-          Adipiscing cursus sit.
+          lectus feugiat viverra nunc gravida malesuada tristique. Elit accumsan
+          cras libero sagittis, mus. Neque a nunc donec vulputate ornare sed
+          sed. Ac ut enim tempus vel fermentum libero consequat mi. In etiam
+          aenean feugiat gravida orci accumsan placerat commodo. Lectus sagittis
+          ante ut mauris quis faucibus luctus pharetra. Adipiscing cursus sit.
         </Typography>
       </Box>
-      <Box display="flex" alignItems="flex-start" justifyContent="center" mb={1}>
+      <Box
+        display="flex"
+        alignItems="flex-start"
+        justifyContent="center"
+        mb={1}
+      >
         <FormControlLabel
           control={
             <Checkbox
@@ -47,7 +51,12 @@ const AppScreen5 = (props) => {
           label="Aceito os termos de uso"
         />
       </Box>
-      <Box display="flex" alignItems="flex-start" justifyContent="center" mb={2}>
+      <Box
+        display="flex"
+        alignItems="flex-start"
+        justifyContent="center"
+        mb={2}
+      >
         <Button
           disableElevation
           variant="contained"
@@ -58,7 +67,7 @@ const AppScreen5 = (props) => {
         </Button>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default AppScreen5
+export default AppScreen5;
