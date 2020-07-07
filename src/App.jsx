@@ -37,7 +37,7 @@ const App = () => {
 
   const [state, setState] = useState({
     bottomNavigationValue: "home",
-    showAppScreen1: false,
+    showAppScreen1: true,
     showAppScreen2: false,
     showAppScreen3: false,
     showAppScreen4: false,
@@ -47,7 +47,7 @@ const App = () => {
     showAppScreen8: false,
     showAppScreen9: false,
     showAppScreen10: false,
-    showAppScreen11: true,
+    showAppScreen11: false,
   });
 
   const handleBottomNavigationChange = (event, value) => {
