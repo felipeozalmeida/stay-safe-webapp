@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { Container } from "@material-ui/core";
+import {
+  Container,
+  BottomNavigation,
+  BottomNavigationAction,
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import {
+  HomeOutlined as HomeOutlinedIcon,
+  PersonOutlined as PersonOutlinedIcon,
+  NotificationsOutlined as NotificationsOutlinedIcon,
+} from "@material-ui/icons";
 import AppScreen1 from "./components/AppScreen1";
 import AppScreen2 from "./components/AppScreen2";
 import AppScreen3 from "./components/AppScreen3";
@@ -13,8 +23,20 @@ import AppScreen9 from "./components/AppScreen9";
 import AppScreen10 from "./components/AppScreen10";
 import AppScreen11 from "./components/AppScreen11";
 
+const useStyles = makeStyles({
+  bottomNavigation: {
+    bottom: 0,
+    left: 0,
+    position: "fixed",
+    width: "100%",
+  },
+});
+
 const App = () => {
+  const classes = useStyles();
+
   const [state, setState] = useState({
+    bottomNavigationValue: "home",
     showAppScreen1: false,
     showAppScreen2: false,
     showAppScreen3: false,
@@ -27,6 +49,10 @@ const App = () => {
     showAppScreen10: false,
     showAppScreen11: true,
   });
+
+  const handleBottomNavigationChange = (event, value) => {
+    setState({ ...state, bottomNavigationValue: value });
+  };
 
   const toggleAppScreen = (back, next) => {
     setState({
@@ -83,6 +109,31 @@ const App = () => {
           <AppScreen10 onShowAppScreen11={() => toggleAppScreen(10, 11)} />
         )}
         {state.showAppScreen11 && <AppScreen11 />}
+        {state.showAppScreen11 && (
+          <BottomNavigation
+            className={classes.bottomNavigation}
+            value={state.bottomNavigationValue}
+            onChange={handleBottomNavigationChange}
+          >
+            <BottomNavigationAction
+              label="Home"
+              value="home"
+              icon={<HomeOutlinedIcon color="primary" fontSize="large" />}
+            />
+            <BottomNavigationAction
+              label="Perfil"
+              value="profile"
+              icon={<PersonOutlinedIcon color="primary" fontSize="large" />}
+            />
+            <BottomNavigationAction
+              label="Notificações"
+              value="notifications"
+              icon={
+                <NotificationsOutlinedIcon color="primary" fontSize="large" />
+              }
+            />
+          </BottomNavigation>
+        )}
       </Container>
     </>
   );
