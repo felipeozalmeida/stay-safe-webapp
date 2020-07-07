@@ -34,8 +34,23 @@ const AppScreen9 = (props) => {
   const [showSymptomsA, setShowSymptomsA] = useState(true);
   const [showSymptomsB, setShowSymptomsB] = useState(false);
 
-  const symptomsA = ["Sintoma A", "Sintoma B", "Sintoma C"];
-  const symptomsB = ["Sintoma D", "Sintoma E"];
+  const symptomsA = [
+    "Mal estar",
+    "Febre",
+    "Tosse",
+    "Dificuldade para respirar",
+    "Cansaço",
+    "Dores no corpo",
+    "Dor de garganta",
+  ];
+  const symptomsB = [
+    "Dores no peito",
+    "Boca ou ponta dos dedos roxa",
+    "Palidez",
+    "Pressão baixa",
+    "Respirando muito rápido",
+    "Sensação de desmaio",
+  ];
 
   const showNextSymptoms = () => {
     setShowSymptomsA(false);

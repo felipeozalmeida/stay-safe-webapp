@@ -1,19 +1,19 @@
 import React from "react";
-import { Box, Button, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import { Alert } from "@material-ui/lab";
+import { Box, Typography } from "@material-ui/core";
+// import { makeStyles } from "@material-ui/core/styles";
+// import { Alert } from "@material-ui/lab";
 import logo from "../../images/logo.png";
 import happyFace from "../../images/happyFace.png";
 
-const useStyles = makeStyles((theme) => ({
-  alert: {
-    backgroundColor: theme.palette.primary.main,
-    flexWrap: "wrap",
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   alert: {
+//     backgroundColor: theme.palette.primary.main,
+//     flexWrap: "wrap",
+//   },
+// }));
 
 const AppScreen11 = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
     <>
@@ -22,11 +22,11 @@ const AppScreen11 = () => {
         alignItems="start"
         justifyContent="center"
         mt={2}
-        mb={4}
+        mb={8}
       >
         <img src={logo} alt="Logo do Stay Safe Webapp." />
       </Box>
-      <Box mb={4}>
+      {/* <Box mb={4}>
         <Alert
           variant="filled"
           severity="info"
@@ -40,7 +40,7 @@ const AppScreen11 = () => {
         >
           <Box fontWeight="fontWeightBold">Responda seu questionário!</Box>
         </Alert>
-      </Box>
+      </Box> */}
       <Box display="flex" alignItems="start" justifyContent="center" mb={4}>
         <img src={happyFace} alt="Ilustração de um rosto feliz." />
       </Box>
