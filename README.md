@@ -1,3 +1,13 @@
+# Stay Safe Webapp
+
+A prototype of a hypothetical mobile application to help doctors monitor the symptoms of his/her patients already diagnosed with COVID-19, made with React. Educational purposes only.
+
+This is only a partial prototype of a designed mobile application that you can check here in my Figma file: https://www.figma.com/file/8mqoDjjCEil0nGmfMQSM51/Stay-Safe?node-id=0%3A1
+
+You can test the app online in Surge.sh: https://felipeozalmeida-stay-safe-webapp.surge.sh/
+
+## Default Create-React-App README
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
