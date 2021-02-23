@@ -86,6 +86,7 @@ const AppScreen6 = (props) => {
             format="dd/MM/yyyy"
             openTo="year"
             label="Data de nascimento"
+            cancelLabel="Cancelar"
             views={["year", "month", "date"]}
             value={date}
             onChange={setDate}
