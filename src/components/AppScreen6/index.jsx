@@ -12,6 +12,7 @@ import {
 } from "@material-ui/core";
 import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
+import locale from "date-fns/locale/pt-BR";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -78,7 +79,7 @@ const AppScreen6 = (props) => {
         <TextField fullWidth type="tel" label="Telefone" />
       </Box>
       <Box mb={2}>
-        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+        <MuiPickersUtilsProvider utils={DateFnsUtils} locale={locale}>
           <DatePicker
             disableFuture
             fullWidth
