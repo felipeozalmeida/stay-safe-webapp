@@ -9,6 +9,7 @@ const useStyles = makeStyles({
     minHeight: 70,
     textTransform: "none",
     width: "100%",
+    height: "100%",
   },
 });
 
