@@ -23,7 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "yarn build && cp build/index.html build/200.html && surge build --domain felipeozalmeida-stay-safe-webapp.surge.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,5 +50,8 @@
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
+  },
+  "devDependencies": {
+    "surge": "^0.21.7"
   }
 }
