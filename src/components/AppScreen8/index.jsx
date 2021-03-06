@@ -43,7 +43,7 @@ const AppScreen8 = (props) => {
       </Box>
       <Box mb={4}>
         <Typography align="center" variant="h5">
-          Por gentileza, informe abaixo quais dessas doenças você já possuí.
+          Por gentileza, informe abaixo quais dessas doenças você já possui.
         </Typography>
       </Box>
       <Box mb={2}>
