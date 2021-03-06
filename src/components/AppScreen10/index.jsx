@@ -26,7 +26,7 @@ const AppScreen10 = (props) => {
       </Box>
       <Box p={2} border={1} borderRadius={8} mb={6}>
         <Typography variant="h5" component="p">
-          Agradecemos sua colaboração, seus resultados já foram incluidos na
+          Agradecemos sua colaboração, seus resultados já foram incluídos na
           análise de sintomas.
         </Typography>
       </Box>
